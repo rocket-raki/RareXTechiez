@@ -31,6 +31,34 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
 });
+// Mobile Menu Toggle
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById("menu-toggle");
+  const navList = document.getElementById("nav-list");
+
+  menuToggle.addEventListener("click", function () {
+    navList.classList.toggle("active");
+  });
+});
+
+// Smooth Scroll to Projects
+function scrollToProjects() {
+  document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
+}
+
+// Contact Form Submission (Dummy Email Functionality)
+function sendMail() {
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let subject = document.getElementById("subject").value;
+  let message = document.getElementById("message").value;
+
+  if (name && email && subject && message) {
+    alert(`Thank you, ${name}! Your message has been sent successfully.`);
+  } else {
+    alert("Please fill in all fields.");
+  }
+}
 
 function sendMail(){
   var params = {
