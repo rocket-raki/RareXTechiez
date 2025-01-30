@@ -656,6 +656,31 @@ button:hover, .btn:hover {
       text-align: center; /* Center-align list items on mobile */
   }
 }
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #444;
+        text-align: center;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 15px 0;
+    }
+}
 
 
 /* Mobile Responsive */
