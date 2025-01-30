@@ -656,3 +656,27 @@ button:hover, .btn:hover {
       text-align: center; /* Center-align list items on mobile */
   }
 }
+
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #222;
+    width: 200px;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+}
