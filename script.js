@@ -60,3 +60,46 @@ function sendMail() {
   }
 }
 
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <nav className="bg-gray-900 text-white p-4">
+      <div className="container mx-auto flex justify-between items-center">
+        <a href="#" className="text-xl font-bold">RareXTechie</a>
+
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex space-x-6">
+          <li><a href="#" className="hover:text-gray-300">Home</a></li>
+          <li><a href="#" className="hover:text-gray-300">About</a></li>
+          <li><a href="#" className="hover:text-gray-300">Services</a></li>
+          <li><a href="#" className="hover:text-gray-300">Contact</a></li>
+        </ul>
+
+        {/* Mobile Menu Button */}
+        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <motion.ul 
+          className="md:hidden flex flex-col bg-gray-800 mt-2 space-y-4 p-4 rounded-lg"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+        >
+          <li><a href="#" className="block text-white" onClick={() => setIsOpen(false)}>Home</a></li>
+          <li><a href="#" className="block text-white" onClick={() => setIsOpen(false)}>About</a></li>
+          <li><a href="#" className="block text-white" onClick={() => setIsOpen(false)}>Services</a></li>
+          <li><a href="#" className="block text-white" onClick={() => setIsOpen(false)}>Contact</a></li>
+        </motion.ul>
+      )}
+    </nav>
+  );
+}
