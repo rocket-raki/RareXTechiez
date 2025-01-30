@@ -60,15 +60,3 @@ function sendMail() {
   }
 }
 
-function sendMail(){
-  var params = {
-    name : document.getElementById('name').value,
-    email : document.getElementById('email').value,
-    subject : document.getElementById('subject').value,
-    number : document.getElementById('number').value,
-    message : document.getElementById('message').value
-
-  }
-  emailjs.send("service_dj0snqt","template_27k8gm7",params).then(alert("Message sent successfully!"))
-
-}
