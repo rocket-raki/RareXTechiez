@@ -665,25 +665,33 @@ nav {
   position: relative;
 }
 /*nav bar added extra*/
-#nav-list {
-  list-style: none;
-  display: flex;
-  gap: 20px;
+
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+
+  #nav-list {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+  }
+
+  #menu-toggle:checked + .burger + #nav-list {
+    display: flex;
+  }
 }
 
-.burger {
-  display: none;
-  cursor: pointer;
-  flex-direction: column;
-  gap: 5px;
-}
 
-.burger span {
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  display: block;
-}
+
+
+
+
 
 /* Mobile styles */
 @media (max-width: 768px) {
