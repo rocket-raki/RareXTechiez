@@ -47,21 +47,6 @@ function scrollToProjects() {
 }
 
 // Contact Form Submission (Dummy Email Functionality)
-function sendMail() {
-  let name = document.getElementById("name").value;
-  let email = document.getElementById("email").value;
-  let subject = document.getElementById("subject").value;
-  let message = document.getElementById("message").value;
-
-  if (name && email && subject && message) {
-    alert(`Thank you, ${name}! Your message has been sent successfully.`);
-  } else {
-    alert("Please fill in all fields.");
-  }
-}function toggleMenu() {
-    const navLinks = document.querySelector(".nav-links");
-    navLinks.classList.toggle("show");
-}
 
     // Initialize EmailJS with your public key
     (function () {
