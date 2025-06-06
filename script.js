@@ -49,9 +49,9 @@ function scrollToProjects() {
 // Contact Form Submission (Dummy Email Functionality)
 
     // Initialize EmailJS with your public key
-    (function () {
+    function () {
       emailjs.init("1w3PGj3ovW8erqnSB"); // ✅ Your actual public key
-    })();
+    }();
 
     function sendMail(event) {
       event.preventDefault();
