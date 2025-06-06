@@ -62,3 +62,26 @@ function sendMail() {
     const navLinks = document.querySelector(".nav-links");
     navLinks.classList.toggle("show");
 }
+
+    // Initialize EmailJS with your public key
+    (function () {
+      emailjs.init("1w3PGj3ovW8erqnSB"); // ✅ Your actual public key
+    })();
+
+    function sendMail(event) {
+      event.preventDefault();
+
+      emailjs.send("service_jkoh826", "template_j6ynmsc", {
+        from_name: document.getElementById("name").value,
+        reply_to: document.getElementById("email").value,
+        subject: document.getElementById("subject").value,
+        phone: document.getElementById("number").value,
+        message: document.getElementById("message").value
+      }).then(function (response) {
+        alert("Message sent successfully!");
+        document.getElementById("contact-form").reset();
+      }, function (error) {
+        alert(" Failed to send message.");
+        console.error("EmailJS Error:", error);
+      });
+    }
